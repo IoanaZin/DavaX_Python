@@ -194,4 +194,3 @@ Pydantic
 
 Uvicorn
 
-Python logging module
