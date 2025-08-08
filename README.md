@@ -19,13 +19,21 @@ Results are saved to a **SQLite database** and operations are logged to a `.log`
 
 math_api/
 ├── main.py # FastAPI app and routes
+
 ├── services.py # MathService with operation logic
+
 ├── db.py # SQLiteDatabase for saving history
+
 ├── logger.py # LoggerService for writing logs
+
 ├── models.py # Pydantic models for request/response
+
 ├── math_ops.db # SQLite database (auto-generated)
+
 ├── math_api.log # Log file (auto-generated)
+
 ├── requirements.txt # Python dependencies
+
 ├── README.md # Project documentation
 
 ---
@@ -40,7 +48,7 @@ cd DavaX_Python_homework
 python -m venv .venv
 .venv\Scripts\activate       # Windows
 pip install -r requirements.txt
-2. Start the FastAPI server
+### 2. Start the FastAPI server
 uvicorn main:app --reload
 Swagger UI: http://localhost:8000/docs
 
