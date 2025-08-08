@@ -2,126 +2,125 @@
 
 ## 🧠 Overview
 
-This project is a lightweight **RESTful microservice** built with **FastAPI**, providing three core mathematical operations:
+This project is a lightweight **RESTful microservice** built with **FastAPI**, offering three core mathematical operations:
 
 - `power`: computes `x^y`
 - `factorial`: computes `n!`
 - `fibonacci`: computes the n-th Fibonacci number
 
-Each operation is exposed via a dedicated **POST endpoint**, with corresponding **GET endpoints** for viewing the operation history.  
-Results are saved to a **SQLite database**, and all activity is logged to a `.log` file.
+Each operation has its own **POST endpoint** and corresponding **GET endpoint** for operation history.  
+Results are saved to a **SQLite database** and operations are logged to a `.log` file.
 
-> 🔐 **Authentication required**: You must include the header `x-api-key: math123secret` in every request.
+> 🔐 **Authentication required**: Use header `x-api-key: math123secret` in all requests.
 
 ---
 
-## 📦 Project Structure
+## 📁 Project Structure
 
 math_api/
 ├── main.py # FastAPI app and routes
-├── services.py # MathService (power, factorial, fibonacci)
-├── db.py # SQLiteDatabase for persistence
-├── logger.py # LoggerService for file-based logging
-├── models.py # Pydantic request/response models
-├── math_ops.db # SQLite database (auto-created)
-├── math_api.log # Log file (auto-created)
+├── services.py # MathService with operation logic
+├── db.py # SQLiteDatabase for saving history
+├── logger.py # LoggerService for writing logs
+├── models.py # Pydantic models for request/response
+├── math_ops.db # SQLite database (auto-generated)
+├── math_api.log # Log file (auto-generated)
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
 
-
 ---
 
 ## 🚀 How to Run Locally
 
-### 1. Clone and set up environment
+### 1. Clone the project and set up the environment
 
 ```bash
 git clone https://github.com/IoanaZin/DavaX_Python_homework.git
 cd DavaX_Python_homework
 python -m venv .venv
-.venv\Scripts\activate      # For Windows
+.venv\Scripts\activate       # Windows
 pip install -r requirements.txt
-
-
----
-
-## 🚀 How to Run Locally
-
-### 1. Clone and set up environment
-
-```bash
-git clone https://github.com/IoanaZin/DavaX_Python_homework.git
-cd DavaX_Python_homework
-python -m venv .venv
-.venv\Scripts\activate      # For Windows
-pip install -r requirements.txt
-
-### 2. Start the FastAPI server
+2. Start the FastAPI server
 uvicorn main:app --reload
-
 Swagger UI: http://localhost:8000/docs
+
 Custom Swagger UI: http://localhost:8000/custom-docs
 
+🔐 API Key Authentication
+All endpoints are protected with an API key.
 
- ## API Key Authentication
-
-All routes require a valid API key.
-
-Include this header in every request:
+Required header:
 x-api-key: math123secret
 In Swagger UI:
-Click the "Authorize" button (top-right)
+Click Authorize (top right)
 
-Paste the API key: math123secret
+Paste the key math123secret
 
+Click Authorize again
 
-##📬 API Endpoints
-##➕ POST /power
-Calculates x raised to the power of y
-Query parameters: x, y
+📬 API Endpoints
+➕ POST /power
+Description: Calculates x raised to the power of y
 
-##🧾 GET /power/history
-Returns history of all power operations
+Params: x, y
 
-##➕ POST /factorial
-Calculates the factorial of x
-Query parameter: x
+🧾 GET /power/history
+Returns all power operations
 
-##🧾 GET /factorial/history
-Returns history of all factorial operations
+➕ POST /factorial
+Description: Calculates the factorial of x
 
-##➕ POST /fibonacci
-Calculates the n-th Fibonacci number
-Query parameter: x
+Param: x
 
-##🧾 GET /fibonacci/history
-Returns history of all Fibonacci operations
+🧾 GET /factorial/history
+Returns all factorial operations
 
-##📄 GET /
-Returns a welcome message with documentation links
+➕ POST /fibonacci
+Description: Calculates the n-th Fibonacci number
 
-##📄 GET /custom-docs
-Loads an alternative Swagger UI with a custom favicon
+Param: x
 
-##🗃️ Data Persistence
-All operations are stored in a SQLite database file math_ops.db
+🧾 GET /fibonacci/history
+Returns all Fibonacci operations
 
-##Schema:
+📄 GET /
+Welcome message + useful links
+
+📄 GET /custom-docs
+Alternative Swagger UI with favicon
+
+🗃️ Data Persistence
+All results are saved in a local SQLite database (math_ops.db)
+
+Each record includes:
 
 operation (e.g. power)
 
-x, y, result, timestamp
+x, y
 
-##📝 Logging
-Every operation is recorded in math_api.log
+result
 
-Fibonacci operations include [CACHE HIT] entries when results are reused from cache
+timestamp
 
-##🛠 Tech Stack
+📝 Logging
+Every operation is logged in math_api.log
+
+Fibonacci includes [CACHE HIT] log lines when reused
+
+🛠 Tech Stack
 Python 3.11
+
 FastAPI
-SQLite3
-Uvicorn (development server)
+
+SQLite
+
 Pydantic
 
-Logging (Python standard
+Uvicorn
+
+Python logging module
+
+
+- `test_main.py` for testing endpoints
+
+I'm here to help!
