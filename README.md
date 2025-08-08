@@ -166,7 +166,7 @@ Welcome message with helpful links
 📄 GET /custom-docs
 Alternative Swagger UI with custom favicon
 
-## 🗃 Data Persistence
+## Data Persistence
 All results are saved in a local SQLite database (math_ops.db)
 
 Schema:
