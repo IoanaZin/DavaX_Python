@@ -1,6 +1,6 @@
-# 🔢 Math Microservice API – FastAPI + SQLite
+#  Math Microservice API – FastAPI + SQLite
 
-## 🧠 Overview
+##  Overview
 
 This project is a lightweight **RESTful microservice** built with **FastAPI**, offering three core mathematical operations:
 
@@ -11,11 +11,11 @@ This project is a lightweight **RESTful microservice** built with **FastAPI**, o
 Each operation has its own **POST endpoint** and corresponding **GET endpoint** for viewing operation history.  
 Results are saved to a **SQLite database**, and operations are logged in a `.log` file.
 
-> 🔐 **Authentication required**: use header `x-api-key: math123secret` in all requests.
+>  **Authentication required**: use header `x-api-key: math123secret` in all requests.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 math_api/
 
@@ -104,7 +104,7 @@ Logs all operations to a file math_api.log.
 Logs [CACHE HIT] messages for Fibonacci when results are reused.
 ---
 
-## 🚀 How to Run Locally
+##  How to Run Locally
 
 ### 1. Clone the project and set up the environment
 
@@ -122,7 +122,7 @@ Swagger UI: http://localhost:8000/docs
 
 Custom Swagger UI: http://localhost:8000/custom-docs
 
-## 🔐 API Key Authentication
+##  API Key Authentication
 All endpoints are protected with an API key.
 
 Required header
@@ -134,7 +134,7 @@ Paste the key: math123secret
 
 Click Authorize
 
-## 📬 API Endpoints
+##  API Endpoints
 
 ➕ POST /power
 Description: Calculates x^y
@@ -166,7 +166,7 @@ Welcome message with helpful links
 📄 GET /custom-docs
 Alternative Swagger UI with custom favicon
 
-## 🗃️ Data Persistence
+## 🗃 Data Persistence
 All results are saved in a local SQLite database (math_ops.db)
 
 Schema:
@@ -178,12 +178,12 @@ result
 
 timestamp
 
-## 📝 Logging
+##  Logging
 Every operation is recorded in math_api.log
 
 Fibonacci operations log [CACHE HIT] when results are retrieved from cache
 
-## 🛠 Tech Stack
+##  Tech Stack
 Python 3.11
 
 FastAPI
